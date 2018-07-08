@@ -2,7 +2,8 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   def index
-    @questions = Question.joins(:user)
+    authorize Question
+    @questions = policy_scope(Question).joins(:user)
   end
 
   def show

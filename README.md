@@ -11,6 +11,14 @@ Things you may want to cover:
 
 * Configuration
 
+Para criar usuários de acordo com o seed, basta executar:
+
+```
+$ rake db:seed
+```
+
+Isso irá gerar um usuário de email `admin@example.com` cuja senha será `App123`
+
 * Database creation
 Certifique-se que você possui Postgres 9.5 instalado e funcionando no seu computador.
 

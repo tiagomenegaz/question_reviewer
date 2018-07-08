@@ -19,7 +19,7 @@
         <td><%= question.content %></td>
         <td><%= question.source %></td>
         <td><%= question.year %></td>
-        <td><%= question.user %></td>
+        <td><%= question.user.email %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>

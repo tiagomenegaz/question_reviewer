@@ -30,4 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  sign_in: "Sign In"
   sign_out: "Sign Out"

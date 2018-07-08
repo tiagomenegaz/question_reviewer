@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   def index
-    @questions = Question.all
+    @questions = Question.joins(:user)
   end
 
   def show
@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_create_params)
 
     if @question.save
-      redirect_to @question, notice: 'Question was successfully created.'
+      redirect_to questions_url, notice: 'Question was successfully created.'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to @question, notice: 'Question was successfully updated.'
+      redirect_to questions_url, notice: 'Question was successfully updated.'
     else
       render :edit
     end

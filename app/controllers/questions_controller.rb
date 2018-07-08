@@ -7,16 +7,20 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    authorize @question
   end
 
   def new
+    authorize Question
     @question = Question.new
   end
 
   def edit
+    authorize @question
   end
 
   def create
+    authorize Question
     @question = Question.new(question_create_params)
 
     if @question.save
@@ -27,6 +31,8 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    authorize @question
+
     if @question.update(question_params)
       redirect_to questions_url, notice: 'Question was successfully updated.'
     else
@@ -35,6 +41,8 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    authorize @question
+
     @question.destroy
     redirect_to questions_url, notice: 'Question was successfully destroyed.'
   end

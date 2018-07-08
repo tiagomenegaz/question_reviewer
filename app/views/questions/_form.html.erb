@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :year %>
-    <%= form.date_select :year %>
+    <%= form.date_select :year,  { discard_day: true, discard_month: true } %>
   </div>
 
   <div class="actions">

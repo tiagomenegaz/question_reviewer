@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @question.content %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @question.source %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @question.year %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @question.user.email %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

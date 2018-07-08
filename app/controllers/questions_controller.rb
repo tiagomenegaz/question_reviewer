@@ -50,6 +50,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_create_params
-    question_params.merge(user: current_user)
+    question_params.merge(user: current_user, pending_at: Time.now)
   end
 end

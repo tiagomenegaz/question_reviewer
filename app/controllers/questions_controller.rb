@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = Question.new(question_create_params)
 
     if @question.save
       redirect_to @question, notice: 'Question was successfully created.'
@@ -45,6 +45,10 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:content, :source, :year, :user_id)
+    params.require(:question).permit(:content, :source, :year)
+  end
+
+  def question_create_params
+    question_params.merge(user: current_user)
   end
 end

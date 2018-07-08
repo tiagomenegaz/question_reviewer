@@ -4,3 +4,8 @@ en:
       question:
         one: Question
         other: Questions
+  questions:
+    status:
+      pending: Pending
+      approved: Approved
+      reproved: Reproved

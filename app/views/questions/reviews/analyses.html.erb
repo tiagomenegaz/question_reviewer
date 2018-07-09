@@ -21,3 +21,5 @@
   <strong>User:</strong>
   <%= @question.user.email %>
 </p>
+
+<%= link_to 'Approve', approve_question_path(@question), method: :put %>

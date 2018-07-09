@@ -26,6 +26,16 @@ class QuestionPolicy < ApplicationPolicy
   end
 
   def analyses?
+    admin_and_pending_question?
+  end
+
+  def approve?
+    admin_and_pending_question? && !record.approved_at?
+  end
+
+  private
+
+  def admin_and_pending_question?
     user.admin? && record.pending_at?
   end
 end

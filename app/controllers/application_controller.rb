@@ -1,7 +1,7 @@
-class ApplicationController < ActionController::Base
+  class ApplicationController < ActionController::Base
   include Pundit
   protect_from_forgery
 
   before_action :authenticate_user!
-  after_action :verify_authorized
+  after_action :verify_authorized, unless: :devise_controller?
 end

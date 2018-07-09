@@ -10,6 +10,7 @@
       <th>Year</th>
       <th>User</th>
       <th>Status</th>
+      <th>Actions</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,6 +24,7 @@
         <td><%= l(decorated_question.year, format: :only_year) %></td>
         <td><%= decorated_question.user_name %></td>
         <td><%= decorated_question.simple_status %></td>
+        <td><%= link_to 'Review', analyses_question_path(question) if policy(question).analyses? %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>

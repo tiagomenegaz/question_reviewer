@@ -24,4 +24,8 @@ class QuestionPolicy < ApplicationPolicy
   def destroy?
     user.admin? || record.user_id == user.id
   end
+
+  def analyses?
+    user.admin? && record.pending_at?
+  end
 end

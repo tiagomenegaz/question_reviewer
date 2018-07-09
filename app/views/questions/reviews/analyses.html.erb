@@ -1,0 +1,23 @@
+<h1>Reviewing Question <%= @question.id %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @question.content %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @question.source %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @question.year %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @question.user.email %>
+</p>

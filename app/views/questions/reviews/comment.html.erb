@@ -1,4 +1,4 @@
-<h1>Reviewing Question <%= @question.id %></h1>
+<h1>Reprove Question <%= @question.id %></h1>
 
 <p id="notice"><%= notice %></p>
 
@@ -22,5 +22,5 @@
   <%= @question.user.email %>
 </p>
 
-<%= link_to 'Approve', approve_question_path(@question), method: :put %>
-<%= link_to 'Reprove', comment_question_path(@question) %>
+<%= link_to 'Reprove', reprove_question_path(@question), method: :put %>
+<%= link_to 'Cancel', questions_path %>

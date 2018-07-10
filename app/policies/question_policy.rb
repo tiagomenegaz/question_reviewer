@@ -33,6 +33,14 @@ class QuestionPolicy < ApplicationPolicy
     admin_and_pending_question? && !record.approved_at?
   end
 
+  def reprove?
+    admin_and_pending_question? && !record.reproved_at?
+  end
+
+  def comment?
+    reprove?
+  end
+
   private
 
   def admin_and_pending_question?

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     member do
       get :analyses, controller: "questions/reviews"
       put :approve, controller: "questions/reviews"
+      get :comment, controller: "questions/reviews"
+      put :reprove, controller: "questions/reviews"
     end
   end
   devise_for :users

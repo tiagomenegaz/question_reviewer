@@ -1,6 +1,6 @@
 module Questions
   class ReviewsController < ApplicationController
-    before_action :set_question, only: [:analyses, :approve]
+    before_action :set_question, only: [:analyses, :approve, :comment, :reprove]
 
     def analyses
       authorize @question
@@ -9,10 +9,24 @@ module Questions
     def approve
       authorize @question
 
-      if @question.update(update_params)
+      if @question.update(approve_params)
         redirect_to questions_path, notice: 'Question was successfully approved.'
       else
         redirect_to questions_path, alert: 'Error when approving question.'
+      end
+    end
+
+    def comment
+      authorize @question
+    end
+
+    def reprove
+      authorize @question
+
+      if @question.update(reprove_params)
+        redirect_to questions_path, notice: 'Question was successfully reproved.'
+      else
+        redirect_to questions_path, alert: 'Error while reproving question.'
       end
     end
 
@@ -22,8 +36,12 @@ module Questions
       @question = Question.find(params[:id])
     end
 
-    def update_params
+    def approve_params
       { pending_at: nil, approved_at: Time.now }
+    end
+
+    def reprove_params
+      { pending_at: nil, reproved_at: Time.now }
     end
   end
 end

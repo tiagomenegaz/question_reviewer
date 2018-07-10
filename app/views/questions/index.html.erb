@@ -16,12 +16,13 @@
 
   <tbody>
     <% @questions.each do |question| %>
+      <% decorated_question = QuestionDecorator.new(question) %>
       <tr>
-        <td><%= question.content %></td>
-        <td><%= question.source %></td>
-        <td><%= question.year %></td>
-        <td><%= question.user.email %></td>
-        <td><%= t("questions.status.#{ question.status }") %></td>
+        <td><%= decorated_question.content %></td>
+        <td><%= decorated_question.source %></td>
+        <td><%= decorated_question.year %></td>
+        <td><%= decorated_question.user_name %></td>
+        <td><%= decorated_question.simple_status %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>

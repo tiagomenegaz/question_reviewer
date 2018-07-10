@@ -18,7 +18,7 @@ class QuestionPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || record.user_id == user.id
+    reproved_question_belongs_to_user?
   end
 
   def destroy?
@@ -45,5 +45,9 @@ class QuestionPolicy < ApplicationPolicy
 
   def admin_and_pending_question?
     user.admin? && record.pending_at?
+  end
+
+  def reproved_question_belongs_to_user?
+    record.user_id == user.id && record.reproved_at?
   end
 end

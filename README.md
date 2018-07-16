@@ -1,23 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
-
-* System dependencies
+Certifique-se que você está com Ruby 2.5.1 e Rails 5.2. Utilize [RVM](https://rvm.io/) para instalar as dependências necessárias.
 
 * Configuration
-
 Para criar usuários de acordo com o seed, basta executar:
 
 ```
 $ rake db:seed
 ```
 
-Isso irá gerar um usuário de email `admin@example.com` cuja senha será `App123`
+Isso irá gerar um usuário administrador com email `admin@example.com` e um normal com `user@example.com`.
+Ambas as senhas serão `App123`.
 
 * Database creation
 Certifique-se que você possui Postgres 9.5 instalado e funcionando no seu computador.
@@ -34,11 +28,3 @@ sudo apt-get install postgresql-9.5 libpq-dev
 Fonte [GoRails](https://gorails.com/setup/ubuntu/16.04)
 
 Caso não seja o seu caso, utilize a [documentação oficial](https://www.postgresql.org/download/) de acordo com a sua necessidade.
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions

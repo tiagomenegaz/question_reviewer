@@ -12,3 +12,6 @@ en:
       pending: Pending
       approved: Approved
       reproved: Reproved
+  date:
+    formats:
+      only_year: "%Y"

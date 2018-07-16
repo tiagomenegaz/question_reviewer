@@ -20,7 +20,7 @@
       <tr>
         <td><%= decorated_question.content %></td>
         <td><%= decorated_question.source %></td>
-        <td><%= decorated_question.year %></td>
+        <td><%= l(decorated_question.year, format: :only_year) %></td>
         <td><%= decorated_question.user_name %></td>
         <td><%= decorated_question.simple_status %></td>
         <td><%= link_to 'Show', question %></td>
